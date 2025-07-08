@@ -1,0 +1,248 @@
+:root {
+  --text-colour: rgb(252, 237, 242);
+  --shadow-colour: rgb(160, 122, 135);
+}
+
+@font-face {
+  font-family: "toxigenesis";
+  src: url("static/fonts/toxigenesis.rg-bold.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: rgba(225, 225, 225, 0.95);
+  height: 100vh;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+
+.window,
+.picture-window {
+  position: absolute;
+  width: 350px;
+  background: #c0c0c0;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #e0e0e0, 4px 4px 0 #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.picture-window {
+  width: 200px;
+  height: 250px;
+}
+
+.window-header {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #fff;
+  padding: 4px;
+  font-size: 12px;
+  position: relative;
+}
+
+.window-header h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.window-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  color: #fff;
+  background: #ff0000;
+  width: 14px;
+  height: 14px;
+  text-align: center;
+  line-height: 14px;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 0 #e0e0e0, 2px 2px 0 #000;
+}
+
+.window-content {
+  padding: 10px;
+  font-size: 14px;
+  color: #000;
+  background: linear-gradient(135deg, #e0e0e0, #f0f0f0);
+  border-top: 1px solid #000;
+  flex-grow: 1;
+}
+
+.picture-window .window-content {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  max-width: 100%;
+  max-height: 180px;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 0 #e0e0e0, 2px 2px 0 #000;
+}
+
+.btn {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #000;
+  background: linear-gradient(45deg, rgb(200, 255, 0), #00ffff);
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 0 #e0e0e0, 2px 2px 0 #000;
+}
+
+.window-content p,
+.window-content ul {
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+
+.window-content ul {
+  padding-left: 20px;
+}
+
+/* Minimal tweak for screenshot placeholder in projects */
+.screenshot-placeholder {
+  width: 100%;
+  height: 80px;
+  background: #e0e0e0;
+  border: 1.5px dashed #888;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin: 8px 0 12px 0;
+}
+
+.window[style*="width: 625px"] {
+  width: 625px !important;
+}
+.window[style*="width: 400px"] {
+  width: 400px !important;
+}
+.window[style*="width: 300px"] {
+  width: 300px !important;
+}
+
+/* References window custom styles */
+
+/* Experience and Projects window bold text */
+.experience-window .window-content .job strong,
+.projects-window .window-content .project strong {
+  font-size: 16px;
+}
+
+.experience-window .role {
+  font-size: 16px;
+  font-weight: normal;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.header-window {
+  position: absolute;
+  background: none;
+  border: none;
+  box-shadow: none;
+  z-index: 10;
+  width: 500px;
+}
+
+.name-header {
+  font-family: "toxigenesis", "Arial", sans-serif;
+  font-size: 3.3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #222;
+}
+
+.subheading {
+  font-family: "toxigenesis", "Arial", sans-serif;
+  font-size: 1.7rem;
+  font-weight: normal;
+  color: #444;
+  margin-top: 0.2em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.window .window-content .job strong,
+.window .window-content .project strong {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.skills-window .skills-content {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.skills-window .skills-left,
+.skills-window .skills-right {
+  flex: 1 1 0;
+}
+.skills-window .skills-left {
+  padding-right: 12px;
+}
+.skills-window .skills-right {
+  padding-left: 12px;
+  border-left: 1px solid #bbb;
+}
+
+.references-window .window-content,
+.references-window .window-content p {
+  font-size: 11px;
+}
+.references-window .window-header,
+.references-window .window-header h1 {
+  font-size: 13px;
+}
+
+.skills-window .window-content strong {
+  font-size: 17px;
+}
+.window[style*="top: 1375px"][style*="left: 300px"] .window-content strong {
+  font-size: 17px;
+}
