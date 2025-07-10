@@ -37,6 +37,13 @@ body::before {
   pointer-events: none;
 }
 
+.cv-container {
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
 .window,
 .picture-window {
   position: absolute;
